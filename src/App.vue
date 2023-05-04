@@ -1,19 +1,34 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="50" />
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="@/assets/logo.svg"
+      width="125"
+      height="50"
+    />
 
     <div class="wrapper mb-5">
-      
-
-      <nav >
+      <nav class="navbar navbar-light bg-light">
+        <RouterLink class="navbar-brand" to="/">
+          <img
+            src="@/assets/logo.svg"
+            width="30"
+            height="30"
+            alt=""
+          />
+        </RouterLink>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/pokemons">Pokemons</RouterLink>
+      </nav>
+
+      <nav>
+        
       </nav>
     </div>
   </header>
