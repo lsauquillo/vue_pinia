@@ -20,15 +20,13 @@ import { RouterLink, RouterView } from "vue-router";
             width="30"
             height="30"
             alt=""
-          />
-        </RouterLink>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/pokemons">Pokemons</RouterLink>
-      </nav>
-
-      <nav>
-        
+          />Pokemons</RouterLink
+        >
+        <div class="d-flex justify-content-sm--start">
+          <RouterLink class="btn btn-outline-info me-2" to="/">Home</RouterLink>
+          <RouterLink class="btn btn-outline-info me-2" to="/about" >About</RouterLink>
+          <RouterLink class="btn btn-outline-info me-2" to="/pokemons">Pokemons</RouterLink>
+        </div>
       </nav>
     </div>
   </header>

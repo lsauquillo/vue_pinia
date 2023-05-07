@@ -1,5 +1,6 @@
 <template>
-  <div class="card col-4 offset-3" style="width: 50%">
+<div class="container">
+  <div v-if="pokeImg" class="card col-4 offset-3" style="width: 50%">
     <img
       class="card-img-top"
       :src="pokeImg"
@@ -10,8 +11,11 @@
       </p>
     </div>
   </div>
+  <h2 class="text-center" v-else>No existe el pokemon</h2>
+</div>
+  
 
-  <button class="boton" @click="back">Volver</button>
+  <button class="btn btn-primary col-4 offset-4 mt-4" @click="back">Volver</button>
 </template>
 
 <script setup>
@@ -34,9 +38,12 @@ const getPoke = async () => {
       `https://pokeapi.co/api/v2/pokemon/${route.params.pokename}`
     );
     pokeImg.value = data.sprites.front_default;
-    console.log(data);
+    console.log( data );
+    console.log(route.params.pokename);
   } catch (err) {
-    console.log(err);
+    pokeImg.value = null;
+    console.log('No existe el pokemon');
+     
   }
 };
 
@@ -45,7 +52,7 @@ getPoke();
 
 <style scoped>
 .boton {
-  width: 60px;
+  width: 100%;
 }
 span {
   font-weight: 800;
