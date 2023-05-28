@@ -1,6 +1,6 @@
 <template>
   <p v-if="loading">Cargando...</p>
-
+   <div v-if="errorData" class="alert alert-danger text-center">{{ errorData}}</div> 
   <div v-if="data" class="container">
     <div class="card col-4 offset-3" style="width: 50%">
       <img
@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-    <h2 class="text-center" v-else>No existe el pokemon</h2>
+    
 
   <button class="btn btn-primary col-4 offset-4 mt-4" @click="back">
     Volver
@@ -37,7 +37,7 @@ const back = () => {
   router.push("/pokemons");
 };
 
-const { getData, data, loading } = useGetData();
+const { getData, data, loading, errorData } = useGetData();
 getData(`https://pokeapi.co/api/v2/pokemon/${route.params.pokename}`);
 //console.log(data.sprites.value.back_default)
 /* sin composable

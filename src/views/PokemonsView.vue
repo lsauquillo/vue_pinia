@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h1>This is an pokemon page</h1>
+    <div v-if="errorData" class="alert alert-danger text-center">{{ errorData}}</div> 
     <p v-if="loading">Cargando...</p>
     <div v-if="data">
       <ul>
@@ -21,7 +22,7 @@ import {useGetData} from '@/composables/getData.js'
 
 //const pokemons = ref([]);
 
-const { loading,getData, data } = useGetData()
+const { loading, getData, data, errorData } = useGetData()
 
 getData("https://pokeapi.co/api/v2/pokemon")
 //pokemons.value = data.results
