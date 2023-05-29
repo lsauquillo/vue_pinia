@@ -3,6 +3,10 @@
    <div v-if="errorData" class="alert alert-danger text-center">{{ errorData}}</div> 
   <div v-if="data" class="container">
     <div class="card col-4 offset-3" style="width: 50%">
+      <!--
+        aqui si lo puede usar
+      <p>{{data.sprites}}</p>
+      -->
       <img
         class="card-img-top"
         :src="data.sprites.back_default"
@@ -39,7 +43,9 @@ const back = () => {
 
 const { getData, data, loading, errorData } = useGetData();
 getData(`https://pokeapi.co/api/v2/pokemon/${route.params.pokename}`);
-//console.log(data.sprites.value.back_default)
+//console.log(data) --> aqui data es una RefImpl ?
+
+
 /* sin composable
 const getPoke = async () => {
   try {
