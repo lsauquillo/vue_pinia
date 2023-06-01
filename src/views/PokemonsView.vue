@@ -11,7 +11,7 @@
       -->
       <ul class="list-group list-group-flush">
         <li
-          class="list-group-item"
+          class="list-group-item text-center"
           v-for="(item, index) in data.results"
           :key="index"
         >

@@ -17,6 +17,8 @@
           Poke name:<span> {{ $route.params.pokename }}</span>
         </p>
       </div>
+      
+      <button class="btn btn-primary" @click="add(data)">Añadir a Favoritos</button>
     </div>
   </div>
     
@@ -31,9 +33,13 @@
 import { ref } from "vue";
 import { useRoute, useRouter, RouterLink } from "vue-router";
 import { useGetData } from "@/composables/getData.js";
+import { useFavoritosStore } from '@/store/favoritos.js'
 
 const route = useRoute(); //para tener acceso a los params
 const router = useRouter(); //para empujar a otra ruta
+const useFavorito = useFavoritosStore()
+const { add } = useFavorito
+
 
 const pokeImg = ref("");
 
