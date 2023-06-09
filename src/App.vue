@@ -4,16 +4,18 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="50"
-    />
+    <!-- <img -->
+      <!-- alt="Vue logo" -->
+      <!-- class="logo" -->
+      <!-- src="@/assets/logo.svg" -->
+      <!-- width="125" -->
+      <!-- height="50" -->
+    <!-- /> -->
 
-    <div class="wrapper mb-5">
-      <nav class="navbar navbar-light bg-light">
+    <div class="container mb-5 d-flex justify-content-center">
+      <div class="row ">
+        <div class="col sm-12">
+          <nav class="nav nav-pills ">
         <RouterLink class="navbar-brand" to="/">
           <img
             src="@/assets/logo.svg"
@@ -29,6 +31,10 @@ import { RouterLink, RouterView } from "vue-router";
           <RouterLink class="btn btn-outline-info me-2" to="/favoritos">Favoritos</RouterLink>
         </div>
       </nav>
+        </div>
+        
+      </div>
+      
     </div>
   </header>
 
@@ -96,6 +102,6 @@ nav a:first-of-type {
 
     padding: 1rem 0;
     margin-top: 1rem;
-  }
+  } 
 }
 </style>

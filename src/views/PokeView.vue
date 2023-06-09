@@ -18,7 +18,7 @@
         </p>
       </div>
       
-      <button class="btn btn-primary" @click="add(data)">Añadir a Favoritos</button>
+      <button :disabled="findPoke(data.name)" class="btn btn-primary" @click="add(data)">Añadir a Favoritos</button>
     </div>
   </div>
     
@@ -38,7 +38,7 @@ import { useFavoritosStore } from '@/store/favoritos.js'
 const route = useRoute(); //para tener acceso a los params
 const router = useRouter(); //para empujar a otra ruta
 const useFavorito = useFavoritosStore()
-const { add } = useFavorito
+const { add, findPoke } = useFavorito
 
 
 const pokeImg = ref("");
