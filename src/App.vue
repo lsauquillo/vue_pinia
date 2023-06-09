@@ -14,7 +14,7 @@ import { RouterLink, RouterView } from "vue-router";
 
     <div class="container mb-5 d-flex justify-content-center">
       <div class="row ">
-        <div class="col sm-12">
+        <div class="col sm-12 col-center">
           <nav class="nav nav-pills ">
         <RouterLink class="navbar-brand" to="/">
           <img
@@ -68,7 +68,7 @@ nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-nav a {
+nav {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
@@ -96,12 +96,17 @@ nav a:first-of-type {
   }
 
   nav {
-    text-align: left;
+    
     margin-left: -1rem;
     font-size: 1rem;
 
     padding: 1rem 0;
     margin-top: 1rem;
   } 
+  .col-center{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 </style>
